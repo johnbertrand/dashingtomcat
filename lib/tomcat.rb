@@ -32,33 +32,21 @@ class Tomcat
     #graph stuff
     @last_x=1
 
-    @stats = {}
-    @ready_points = []
-    (1..10).each do |i|
-      @ready_points << { x: i, y: 0 }
-    end
 
-
-    @service_points = []
-    (1..10).each do |i|
-      @service_points << { x: i, y: 0 }
-    end
-
-
-    @prepare_points = []
-    (1..10).each do |i|
-      @prepare_points << { x: i, y: 0 }
-    end
-
+    @ready_points     = []
+    @keepalive_points = []
+    @service_points   = []
+    @prepare_points   = []
     @finishing_points = []
     (1..10).each do |i|
+      @ready_points     << { x: i, y:0 }
+      @keepalive_points << { x: i, y:0 }
+      @service_points   << { x: i, y:0 }
+      @prepare_points   << { x: i, y:0 }
       @finishing_points << { x: i, y:0 }
     end
 
-    @keepalive_points = []
-    (1..10).each do |i|
-      @keepalive_points << { x: i, y:0 }
-    end
+
 
 
     @last_x = @ready_points.last[:x]
