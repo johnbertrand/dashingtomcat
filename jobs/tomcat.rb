@@ -11,7 +11,7 @@ t = Tomcat.new(url,instance,username, password,connector)
 SCHEDULER.every '1s', :first_in => 0 do |job|
   t.refresh
 
-  send_event('tomcat',  {  threadready:     t.get_points,
+  send_event('tomcat',  {  threadready:     t.get_ready_points,
                            threadservice:   t.get_service_points,
                            threadprepare:   t.get_prepare_points,
                            threadfinishing: t.get_finishing_points,

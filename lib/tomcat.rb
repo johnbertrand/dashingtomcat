@@ -33,9 +33,9 @@ class Tomcat
     @last_x=1
 
     @stats = {}
-    @points = []
+    @ready_points = []
     (1..10).each do |i|
-      @points << { x: i, y: 0 }
+      @ready_points << { x: i, y: 0 }
     end
 
 
@@ -61,7 +61,7 @@ class Tomcat
     end
 
 
-    @last_x = @points.last[:x]
+    @last_x = @ready_points.last[:x]
 
   end
 
@@ -84,8 +84,8 @@ class Tomcat
     @max    = memory.xpath("@max")
 
     @last_x += 1
-    @points.shift
-    @points << { x: @last_x, y:  @ready.to_i  }
+    @ready_points.shift
+    @ready_points << { x: @last_x, y:  @ready.to_i  }
 
 
     @service_points.shift
@@ -101,8 +101,8 @@ class Tomcat
     @keepalive_points<< { x: @last_x, y:  @keepalive.to_i  }
   end
 
-  def get_points
-    return @points
+  def get_ready_points
+    return @ready_points
   end
 
   def get_service_points
