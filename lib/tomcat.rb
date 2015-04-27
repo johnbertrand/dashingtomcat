@@ -29,15 +29,12 @@ class Tomcat
     @request = Net::HTTP::Get.new(@uri.request_uri)
     @request.basic_auth(@user_name, @password)
 
-    #graph stuff
-    @last_x=1
-
-
     @ready_points     = []
     @keepalive_points = []
     @service_points   = []
     @prepare_points   = []
     @finishing_points = []
+
     (1..10).each do |i|
       @ready_points     << { x: i, y:0 }
       @keepalive_points << { x: i, y:0 }
@@ -45,10 +42,6 @@ class Tomcat
       @prepare_points   << { x: i, y:0 }
       @finishing_points << { x: i, y:0 }
     end
-
-
-
-
     @last_x = @ready_points.last[:x]
 
   end
