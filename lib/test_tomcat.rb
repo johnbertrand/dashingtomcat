@@ -6,7 +6,7 @@ require 'pp'
 
 
 
-uri = URI.parse("http://192.168.66.167:8015/manager/status?XML=true")
+uri = URI.parse("http://192.168.2.1:8015/manager/status?XML=true")
 http = Net::HTTP.new(uri.host, uri.port)
 request = Net::HTTP::Get.new(uri.request_uri)
 request.basic_auth("username", "password")
