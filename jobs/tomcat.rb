@@ -1,6 +1,6 @@
 
-url = "http://192.168.66.167:8015/manager/status?XML=true"
-instance  = "wombat-01"
+url = "http://192.168.0.1:8015/manager/status?XML=true"
+instance  = "tomcat-01"
 username  = ""
 password  = ""
 connector = "http-8015"
