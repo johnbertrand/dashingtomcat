@@ -1,6 +1,6 @@
-This is a dsahing.io widget that will graph your tomcat threads
+This is a dashing.io widget that will graph your tomcat threads
 
-1) copy the widgets/tomcat folder to your wigets folder.
+1) copy the widgets/tomcat folder to your widgets folder.
 
 2) copy lib/tomcat.rb to your lib folder
 
